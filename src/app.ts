@@ -29,7 +29,7 @@ app.use(
 
 app.use(cors({
   origin: true,
-  credentials: true,
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,7 +41,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false,
+    secure: true,
+sameSite: "none",
     httpOnly: true,
     maxAge: 7 * 24 * 60 * 60 * 1000,
   },
